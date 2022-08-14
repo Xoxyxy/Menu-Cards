@@ -1,6 +1,6 @@
 :root {
   --font-family: "Circe", sans-serif;
-  --content-width: 1160px;
+  --content-width: 1180px;
   --container-offset: 15px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
   --light-color: #fff;
@@ -60,10 +60,6 @@ a {
   text-decoration: none;
 }
 
-.site-container {
-  overflow: hidden;
-}
-
 .btn-reset {
   border: none;
   padding: 0;
@@ -81,6 +77,24 @@ a {
   margin: 0 auto;
   padding: 0 var(--container-offset);
   max-width: var(--container-width);
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    max-width: 480px;
+  }
 }
 
 .logo {
@@ -108,7 +122,13 @@ a {
   background: -o-linear-gradient(313.7deg, #FFB545 8.29%, #FF7085 100%);
   background: linear-gradient(136.3deg, #FFB545 8.29%, #FF7085 100%);
   border-radius: 9px;
-  padding: 12px 31px 12px 31px;
+  padding: 12px 31px;
+}
+
+@media (max-width: 550px) {
+  .menu-btn {
+    padding: 12px 91px;
+  }
 }
 
 @media (max-width: 960px) {
@@ -195,6 +215,16 @@ a {
 
 .nav__drop-link:hover {
   color: var(--accent-color);
+}
+
+.menu {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .menu {
+    display: block;
+  }
 }
 
 .menu__icon {
@@ -285,29 +315,23 @@ a {
 
 .menu__drop {
   position: absolute;
-  top: 132px;
-  left: 20%;
+  top: 80px;
   display: none;
   gap: 42px;
   padding: 20px;
+  right: 0;
+}
+
+@media (max-width: 550px) {
+  .menu__drop {
+    right: 5%;
+  }
 }
 
 .menu__drop--active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-@media (max-width: 768px) {
-  .menu__drop {
-    left: 10%;
-  }
-}
-
-@media (max-width: 640px) {
-  .menu__drop {
-    left: 5%;
-  }
 }
 
 .menu__list {
@@ -319,8 +343,15 @@ a {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 25px;
-  margin-right: 50px;
   min-width: 150px
+}
+
+@media (max-width: 550px) {
+  .menu__list {
+    padding: 20px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
 }
 
 .menu__list--right {
@@ -328,6 +359,12 @@ a {
   padding-left: 30px;
   margin-right: 0;
   gap: 12px;
+}
+
+@media (max-width: 550px) {
+  .menu__list--right {
+    display: none;
+  }
 }
 
 .menu__item {
@@ -347,7 +384,13 @@ a {
 }
 
 .menu__btn {
-  margin-top: 50px;
+  margin-top: 40px;
+}
+
+@media (max-width: 550px) {
+  .menu__btn {
+    margin-top: 20px;
+  }
 }
 
 .header {
@@ -357,6 +400,7 @@ a {
 }
 
 .header__inner {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

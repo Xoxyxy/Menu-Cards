@@ -21,7 +21,6 @@ if (dropBtn && dropMenu) {
       if (e.target.classList.contains('nav__drop')) {
         return;
       }
-
       dropBtn.classList.remove('nav__link--active');
       dropMenu.classList.remove('nav__drop--active');
     }

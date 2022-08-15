@@ -474,6 +474,7 @@ a {
   grid-auto-columns: 33%;
   overflow-x: auto;
   padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 @media (max-width: 1200px) {

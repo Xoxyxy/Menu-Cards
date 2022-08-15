@@ -26,3 +26,19 @@ if (dropBtn && dropMenu) {
     }
   });
 }
+
+if (document.documentElement.clientWidth < 480) {
+  const menuItem = document.querySelector('.menu__item')
+  const menuList = document.querySelector('.menu__list')
+  const menuListRight = document.querySelector('.menu__list--right')
+  const menuImg = document.querySelector('.menu__img')
+
+  menuItem.addEventListener('click', () => {
+    menuListRight.classList.toggle('menu__list--active')
+    menuListRight.classList.toggle('menu__list')
+    menuList.classList.toggle('menu__list-left--active')
+    menuImg.classList.toggle('menu__img--active')
+    menuItem.classList.toggle('menu__item--active')
+  })
+
+}

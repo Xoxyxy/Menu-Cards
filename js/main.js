@@ -19,14 +19,18 @@ const dropBtn = document.querySelector('.nav__link--drop')
 const dropMenu = document.querySelector('.nav__drop')
 
 if (dropBtn && dropMenu) {
-  dropBtn.addEventListener('click', () => {
+  dropBtn.addEventListener('mouseenter', () => {
+    dropBtn.classList.toggle('nav__link--active')
+    dropMenu.classList.toggle('nav__drop--active')
+  })
+  dropMenu.addEventListener('mouseleave', () => {
     dropBtn.classList.toggle('nav__link--active')
     dropMenu.classList.toggle('nav__drop--active')
   })
   document.addEventListener('click', e => {
     if (!dropMenu.contains(e.target) && !dropBtn.contains(e.target)) {
       dropBtn.classList.remove('nav__link--active')
-    dropMenu.classList.remove('nav__drop--active')
+      dropMenu.classList.remove('nav__drop--active')
     }
   })
 }

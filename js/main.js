@@ -27,12 +27,6 @@ if (dropBtn && dropMenu) {
     dropBtn.classList.toggle('nav__link--active')
     dropMenu.classList.toggle('nav__drop--active')
   })
-  document.addEventListener('click', e => {
-    if (!dropMenu.contains(e.target) && !dropBtn.contains(e.target)) {
-      dropBtn.classList.remove('nav__link--active')
-      dropMenu.classList.remove('nav__drop--active')
-    }
-  })
 }
 
 if (document.documentElement.clientWidth < 480) {

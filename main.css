@@ -1,0 +1,272 @@
+:root {
+  --font-family: "Circe", sans-serif;
+  --content-width: 1160px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+}
+
+@font-face {
+  font-family: "Circe";
+  src: url("../fonts/CirceRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Circe";
+  src: url("../fonts/CirceBold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.page {
+  height: 100%;
+  font-family: var(--font-family, sans-serif);
+  -webkit-text-size-adjust: 100%;
+}
+
+.page__body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+  font-size: 16px;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-container {
+  overflow: hidden;
+}
+
+.main {
+  height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+}
+
+.centered {
+  text-align: center;
+}
+
+.card__inner {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 15px;
+  grid-auto-columns: 33%;
+  overflow-x: auto;
+}
+
+@media (max-width: 1200px) {
+  .card__inner {
+    grid-auto-columns: 40%;
+  }
+}
+
+@media (max-width: 960px) {
+  .card__inner {
+    grid-auto-columns: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card__inner {
+    grid-auto-columns: 65%;
+  }
+}
+
+@media (max-width: 640px) {
+  .card__inner {
+    grid-auto-columns: 75%;
+  }
+}
+
+@media (max-width: 576px) {
+  .card__inner {
+    grid-auto-columns: 80%;
+  }
+}
+
+@media (max-width: 490px) {
+  .card__inner {
+    grid-auto-columns: 100%;
+  }
+}
+
+.card__box {
+  max-width: 373px;
+  border: 1px solid #e4e4e4;
+  border-radius: 20px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.card__box:hover {
+  -webkit-box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card__content {
+  padding: 25px 20px 30px 20px;
+}
+
+.card__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  color: #29193e;
+  margin: 0 0 5px 0;
+}
+
+.card__top {
+  margin-bottom: 15px;
+}
+
+.card__subtitles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+
+.card__subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #565681;
+  padding: 2px 5px;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+}
+
+.card__stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 21px;
+  margin-bottom: 15px;
+}
+
+.card__stats-title:not(:last-child), .card__stats-text:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.card__stats-title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #565681;
+}
+
+.card__stats-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #29193e;
+}
+
+.card__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.card__price-left {
+  padding-right: 24px;
+  border-right: 1px solid #e4e4e4;
+}
+
+@media (max-width: 490px) {
+  .card__price-left {
+    border-right: none;
+  }
+}
+
+.card__price-right {
+  padding-left: 24px;
+}
+
+@media (max-width: 490px) {
+  .card__price-right {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 490px) {
+  .card__price {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.card__price-subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #565681;
+}
+
+.card__buy {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  color: #fb7033;
+}
+
+.card__price-market {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  color: #29193e;
+}
+
+.card__place-subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #565681;
+}
+
+.card__place-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  color: #29193e;
+}
